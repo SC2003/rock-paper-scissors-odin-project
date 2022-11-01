@@ -7,50 +7,115 @@ const computerScoreElement = document.querySelector(".computer-score");
 
 const winnerElement = document.querySelector(".winner");
 
-const output = document.querySelector("#output");
-
+let outputArea = document.querySelector("#output");
+let output;
 const choiceBtn = document.querySelectorAll(".choices-btn-container");
+let playerScore = parseInt();
 
-// const rockBtn = document.querySelector('.rock-btn');
-
-// const paperBtn = document.querySelector('.paper-btn');
-
-// const scissorsBtn = document.querySelector('.scissors-btn');
-
-// rockBtn.value = validChoices[0];
-// paperBtn.value = validChoices[1];
-// scissorsBtn.value = validChoices[2];
-
-let playerScore = parseInt(0);
-
-let computerScore = parseInt(0);
+let computerScore = parseInt();
 
 const getComputerChoice = () => {
     const randomChoice = Math.floor(Math.random() * validChoices.length);
     return validChoices[randomChoice]
+    // const randomChoice = Math.floor(Math.random() * validChoices.length) + 1;
+    // return validChoices[randomChoice - 1]
+
+}
+const playRound = (playerSelection, computerSelection) => {
+    if (computerSelection === "rock") {
+        if (playerSelection === "rock") {
+            outputArea.textContent = (`It's a Tie!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "scissors") {
+            computerScore++;
+            outputArea.textContent = (`Computer Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "paper") {
+            playerScore++;
+            outputArea.textContent = (`Player Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else {
+            outputArea.textContent = (`Error: Something Went Wrong!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        }
+    } else if (computerSelection === "paper") {
+        if (playerSelection === "paper") {
+            outputArea.textContent = (`It's a Tie!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "rock") {
+            computerScore++;
+            outputArea.textContent = (`Computer Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "scissors") {
+            playerScore++;
+            outputArea.textContent = (`Player Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else {
+            outputArea.textContent = (`Error: Something Went Wrong!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        }
+    } else if (computerSelection === "scissors") {
+        if (playerSelection === "scissors") {
+            outputArea.textContent = (`It's a Tie!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "paper") {
+            computerScore++;
+            outputArea.textContent = (`Computer Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else if (playerSelection === "rock") {
+            playerScore++;
+            outputArea.textContent = (`Player Won!!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        } else {
+            outputArea.textContent = (`Error: Something Went Wrong!
+            \nComputer's Choice: "${computerSelection}"
+            \nPlayer's   Choice: "${playerSelection}"`);
+        }
+    } else {
+        outputArea.textContent = (`Error: Something Went Wrong!
+        \nComputer's Choice: "${computerSelection}"
+        \nPlayer's   Choice: "${playerSelection}"`);
+    }
 };
-const computerSelection = getComputerChoice();
-// console.log(choiceBtn)
-output.textContent = `${computerSelection}`;
 
 choiceBtn.forEach((choice => {
     choice.addEventListener('click', (e) => {
-        playerChoice = e.target.id;
-        
-        // if (playerChoice == "rock"){
-        //     console.log(playerChoice);
-        // }
-        // else if (playerChoice == "paper"){
-        //     console.log(playerChoice);
-        // }
-        // else if (playerChoice == "scissors")
-        // {
-        //     console.log(playerChoice);
-        // }
-        console.log(playerChoice)
-        // {once: true}
-    },  )
+        // playerSelection = e.target.id;
+        // const computerSelection = getComputerChoice();
+        // // console.log(playerSelection)
+        // // console.log(computerSelection)
+        // // ,{once: true}
+        // playRound(playerSelection, computerSelection);
+        playRound(e.target.id, getComputerChoice());
+    })
 }))
 
-
+const winner = (playerScore, computerScore) => {
+    if (playerScore > computerScore) {
+        return `Player Won by Total Score of ${playerScore}`;
+    } else if (playerScore < computerScore) {
+        return `Computer Won by Total Score of ${computerScore}`;
+    } else {
+        return `Tie with The Player Scoring: ${playerScore} and The Computer Scoring: ${computerScore}`;
+    }
+}
 const restart = () => location.replace(location.href.split('#')[0]);
+
+playerScoreElement.textContent = (`Player's Score: ${playerScore}`);
+
+computerScoreElement.textContent = (`Computer's Score: ${computerScore}`);
+
+//winnerElement.textContent = winner(playerScore, computerScore);
+outputArea.textContent = output;
+//output.textContent = winner(playerScore, computerScore);

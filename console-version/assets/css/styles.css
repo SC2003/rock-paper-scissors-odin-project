@@ -16,6 +16,14 @@ body {
     font-size: 45px;
     padding: 3rem;
 }
+a {
+    color: red;
+    display: flex;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
 .player-score,.computer-score, .winner  {
     font-size: 25px;
     margin: 20px;
@@ -23,7 +31,7 @@ body {
 .btn-restart {
     background-color: rgb(255, 0, 0);
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid rgb(255, 0, 0);
     font-size: 20px;
 }

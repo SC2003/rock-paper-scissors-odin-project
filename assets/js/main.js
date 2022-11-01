@@ -4,7 +4,8 @@ const main = document.querySelector(".main");
 const playerScoreElement = document.querySelector(".player-score");
 const computerScoreElement = document.querySelector(".computer-score");
 const winnerElement = document.querySelector(".winner");
-
+const output = document.querySelector("#output");
+      output.textContent = `${validChoices}`;
 const rockBtn = document.querySelector('.rock-btn');
 const paperBtn = document.querySelector('.paper-btn');
 const scissorsBtn = document.querySelector('.scissors-btn');

@@ -1,21 +1,27 @@
-*, *::before,
+*,
+*::before,
 *::after {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     /* border: 1px solid red; */
 }
+
 body {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: rgb(31, 41, 55);
     color: rgb(249, 250, 248);
-    
+    font-family: 'Courier New', Courier, monospace;
 }
+
 .title {
     text-align: center;
+    /* padding: 40px; */
+    font-size: 45px;
+    padding: 2rem;
 }
+
 .container {
-    margin-top: 45px;
     padding-top: 20px;
     display: flex;
     justify-content: center;
@@ -23,62 +29,66 @@ body {
     gap: 50px;
     flex-flow: column wrap;
 }
-.player-score,.computer-score, .winner  {
+
+.score-container p {
     font-size: 25px;
-    margin: 20px;
+    margin: 5px 20px;
 }
-.text-container {
-    
-    
+.winner {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
 }
+.score-container {
+    display: flex;
+}
+
+.choices-btn-container {
+    display: flex;
+    gap: 20px;
+}
+
+#output {
+    resize: none;
+    background-color: rgb(31, 41, 55);
+    padding: 10px;
+    text-align: center;
+    color: rgb(249, 250, 248);
+}
+
 .choices-btn {
     background-color: rgb(255, 224, 224);
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid rgb(255, 224, 224);
     font-size: 20px;
+    color: rgb(0, 0, 0);
 }
+
 .choices-btn:hover {
     background-color: rgb(126, 117, 117);
     border: 1px solid rgb(126, 117, 117);
 }
+
 .choices-btn:active {
     background: rgb(59, 58, 58);
     border: 1px solid rgb(59, 58, 58);
 }
+
 .btn-restart {
     background-color: rgb(255, 0, 0);
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid rgb(255, 0, 0);
     font-size: 20px;
 }
+
 .btn-restart:hover {
     background-color: rgb(200, 0, 0);
     border: 1px solid rgb(200, 0, 0);
 }
+
 .btn-restart:active {
     background: rgb(150, 0, 0);
     border: 1px solid rgb(150, 0, 0);
 }
-
-
-
-
-
-
-
-
-
-/* .container {
-    text-align: center;
-}
-.main {
-    font-size: 45px;
-    padding: 3rem;
-}
-.player-score,.computer-score, .winner  {
-    font-size: 25px;
-    margin: 20px;
-}
- */

@@ -11,16 +11,18 @@
   <body>
     <h1 class="title">Rock-Paper-Scissors Game</h1>
     <div class="container">
-      <div class="text-container">
+      <div class="score-container">
         <p class="player-score">Player's Score: 0</p>
+        <p>|</p>
         <p class="computer-score">Computer's Score: 0</p>
-        <p class="winner"></p>
       </div>
       <div class="choices-btn-container">
         <button class="rock-btn choices-btn" value="rock">Rock</button>
         <button class="paper-btn choices-btn" value="paper">Paper</button>
         <button class="scissors-btn choices-btn" value="scissors">Scissors</button>
       </div>
+      <textarea name="output" id="output" cols="40" rows="10" disabled></textarea>
+      <p class="winner"></p>
       <button class="btn-restart" onclick="restart();">Restart</button>
     </div>
   </body>

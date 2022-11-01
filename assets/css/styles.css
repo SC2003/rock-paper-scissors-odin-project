@@ -55,6 +55,7 @@ body {
     padding-top: 5px;
     text-align: center;
     color: rgb(249, 250, 248);
+    border-radius: 8px;
 }
 a {
     color: red;

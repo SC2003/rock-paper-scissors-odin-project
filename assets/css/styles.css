@@ -56,10 +56,8 @@ body {
     color: rgb(249, 250, 248);
 }
 a {
-   
     color: red;
     display: flex;
-    
 }
 .choices-btn {
     background-color: rgb(255, 224, 224);

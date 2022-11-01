@@ -9,11 +9,18 @@
     <script src="./assets/js/main.js" defer></script>
   </head>
   <body>
+    <h1 class="title">Rock-Paper-Scissors Game</h1>
     <div class="container">
-      <p class="main">Play The Game in Browser's Console</p>
-      <p class="player-score">Player's Score: 0</p>
-      <p class="computer-score">Computer's Score: 0</p>
-      <p class="winner"></p>
+      <div class="text-container">
+        <p class="player-score">Player's Score: 0</p>
+        <p class="computer-score">Computer's Score: 0</p>
+        <p class="winner"></p>
+      </div>
+      <div class="choices-btn-container">
+        <button class="rock-btn choices-btn" value="rock">Rock</button>
+        <button class="paper-btn choices-btn" value="paper">Paper</button>
+        <button class="scissors-btn choices-btn" value="scissors">Scissors</button>
+      </div>
       <button class="btn-restart" onclick="restart();">Restart</button>
     </div>
   </body>
